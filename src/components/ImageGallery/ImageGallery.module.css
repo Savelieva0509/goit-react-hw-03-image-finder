@@ -1,0 +1,8 @@
+.imageGallery {
+    display: flex;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding-bottom: 24px;
+    list-style: none;
+    padding: 0;
+}
