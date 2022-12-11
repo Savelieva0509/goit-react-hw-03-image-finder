@@ -41,7 +41,7 @@ class Searchbar extends Component {
             onChange={this.handleChange}
           />
         </form>
-        <ToastContainer />
+        <ToastContainer autoClose={3000} />
       </header>
     );
   }

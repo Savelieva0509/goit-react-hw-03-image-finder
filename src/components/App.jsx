@@ -73,7 +73,7 @@ this.setState(prevState=>({page:prevState.page+1}))
       {showModal && <Modal src={largeImage} onClose={this.onModalClose}/>  }
       {this.state.photos.length>0 && <ImageGallery items={photos} onClick={this.onClick}/>}
         {photos.length !== 0 && totalPages > page && (<Button onLoadMore={this.loadMore} />)}
-         <ToastContainer />
+         <ToastContainer autoClose={3000}/>
       </div>
     );
   }
