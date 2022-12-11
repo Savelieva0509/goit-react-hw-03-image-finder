@@ -5,6 +5,8 @@ import Modal from "./Modal/Modal"
 import Searchbar from "./Searchbar/Searchbar";
 import { Component } from 'react';
 import Loader from "./Loader/Loader";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class App extends Component {
   state={
@@ -29,7 +31,7 @@ class App extends Component {
         .finally( ()=>this.setState({ isLoading: false }))
         if (response.data.totalHits === 0)
         {
-          alert('Enter correct request');
+          toast('Enter correct name!');;
           this.setState({ images: [] });
           return;
       }
@@ -65,13 +67,14 @@ this.setState(prevState=>({page:prevState.page+1}))
   {
     const{isLoading,showModal,photos,largeImage,totalPages,page}=this.state;
     return (
-      <>
+      <div>
       <Searchbar onSubmit={this.handleSubmit}/>
       {isLoading && <Loader/>}
       {showModal && <Modal src={largeImage} onClose={this.onModalClose}/>  }
       {this.state.photos.length>0 && <ImageGallery items={photos} onClick={this.onClick}/>}
-      {photos.length!==0 && totalPages>page && ( <Button onLoadMore={this.loadMore}/>)}
-      </>
+        {photos.length !== 0 && totalPages > page && (<Button onLoadMore={this.loadMore} />)}
+         <ToastContainer />
+      </div>
     );
   }
 }
