@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { CgSearchLoading } from "react-icons/cg";
+import { CgSearchLoading } from 'react-icons/cg';
 import css from './Searchbar.module.css';
 
 class Searchbar extends Component {
@@ -30,7 +30,11 @@ class Searchbar extends Component {
       <header className={css.searchbar} onSubmit={this.handleSubmit}>
         <form className={css.searchForm}>
           <button type="submit" className={css.searchFormButton}>
-            <CgSearchLoading className={css.searchFormIcon} size={30} color={'#3f51b5' } />
+            <CgSearchLoading
+              className={css.searchFormIcon}
+              size={30}
+              color={'#3f51b5'}
+            />
             <span className={css.searchFormButton__label}>Search</span>
           </button>
           <input

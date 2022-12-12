@@ -8,10 +8,10 @@ const Loader = () => {
         height="80"
         width="80"
         ariaLabel="MagnifyingGlass-loading"
-        wrapperStyle={{}}
+        wrapperStyle={{ margin:'20', }}
         wrapperClass="MagnifyingGlass-wrapper"
         glassColor="#c0efff"
-        color="#e15b64"
+        color="#3f51b5"
       />
     </div>
   );
